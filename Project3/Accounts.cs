@@ -6,29 +6,38 @@ using System.Threading.Tasks;
 
 namespace Project3
 {
-    class Accounts
+    abstract class Accounts
     {
         //fields
-        protected int accountNumber;
-        protected int accountBalance;
-        protected int accountType;
+        public abstract float Withdrawl(float withdrawl);
+        public abstract float Deposit(float deposit);
 
-        //properties
-        public double depositAmount { get; }
-        public double withdrawlAmount { get; }
-
-
-        //constructors
-        public Accounts()
+        //Constructor used to get balances for the checking and savings accounts
+        public virtual void AccountBalance()
         {
-            //default constructor
         }
-        public Accounts(int accountNumber, int accountBalance, int accountType)
-        {
-            this.accountNumber = accountNumber;
-            this.accountBalance = accountBalance;
-            this.accountType = accountType;
-        }
+
+
+        //protected int accountNumber;
+        //protected int accountBalance;
+        //protected int accountType;
+
+        ////properties
+        //public double depositAmount { get; }
+        //public double withdrawlAmount { get; }
+
+
+        ////constructors
+        //public Accounts()
+        //{
+        //    //default constructor
+        //}
+        //public Accounts(int accountNumber, int accountBalance, int accountType)
+        //{
+        //    this.accountNumber = accountNumber;
+        //    this.accountBalance = accountBalance;
+        //    this.accountType = accountType;
+        //}
 
     }
 }
