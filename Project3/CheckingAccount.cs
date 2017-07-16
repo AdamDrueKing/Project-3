@@ -52,9 +52,8 @@ namespace Project3
 
         public override void NewBalance()
         {
-            Console.WriteLine();
             //base.AccountBalance();
-
+            //Console.WriteLine
         }
 
 

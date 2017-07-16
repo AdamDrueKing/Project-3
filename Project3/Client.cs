@@ -9,9 +9,11 @@ namespace Project3
     class Client
     {
         //fields
-        public string clientName;
-        public string clientAddress;
-        public double clientPhone;
+        private string clientName = "John Smith";
+        private string clientAddress = "123 Main Street";
+        private string clientPhone = "216-555-1234";
+        private float checkingAccountNumber = 00001;
+        private float savingsAccountNumber = 00002;
 
         //properties
         public string ClientName
@@ -19,33 +21,53 @@ namespace Project3
             get { return this.clientName; }
             set { this.clientName = value; }
         }
+
         public string ClientAddress
-        { get { return this.clientAddress; }
+        {
+            get { return this.clientAddress; }
             set { this.clientAddress = value; }
         }
-        public double ClientPhone
-        { get { return this.clientPhone; }
+
+        public string ClientPhone
+        {
+            get { return this.clientPhone; }
             set { this.clientPhone = value; }
         }
 
-        //constructors
+        public float CheckingAccountNumber
+        {
+            get { return this.checkingAccountNumber; }
+            set { this.checkingAccountNumber = value; }
+        }
+
+        public float SavingsAccountNumber
+        {
+            get { return this.savingsAccountNumber; }
+            set { this.savingsAccountNumber = value; }
+        }
+
+
+        //Constructors
         public Client()
         {
-        //default constructor
+            //default constructor
         }
-        public Client(string clientName, string clientAddress, double clientPhone)
+
+        public Client(string name, string address, string phoneNumber)
         {
             this.clientName = clientName;
             this.clientAddress = clientAddress;
-            this.clientPhone = clientPhone;
+        }
+        
+        //Methods
+        public void ClientInformation()
+        {
+            Console.WriteLine("Client name: " + clientName);
+            Console.WriteLine("Client address: " + clientAddress);
+            Console.WriteLine("Client phone number: " + clientPhone);
+            Console.WriteLine("Client Checking Account Number: " + checkingAccountNumber);
+            Console.WriteLine("Client Savings Account Number: " + savingsAccountNumber);
         }
 
-        //public override string AllClientInfo()
-        //{
-            
-          //  return clientName + clientAddress + clientPhone;
-
-         
-
-        }
+    }
 }
