@@ -50,11 +50,11 @@ namespace Project3
             return balance = balance - withdrawl;
         }
 
-        public override void NewBalance()
-        {
-            //base.AccountBalance();
-            //Console.WriteLine
-        }
+        //public override void NewBalance()
+        //{
+        //    //base.AccountBalance();
+        //    //Console.WriteLine
+        //}
 
 
 
