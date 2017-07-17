@@ -9,11 +9,13 @@ namespace Project3
     class CheckingAccount : Accounts
     {
         //fields
+        //account information used to populate user field.
         private string accountType = "CheckingAccount";
         private float balance = 1000000;
         private int accountNumber = 00001;
 
         //Properties
+        //used to populate the input
         public float AccountBalance
         {
             get { return this.AccountBalance; }
@@ -50,11 +52,11 @@ namespace Project3
             return balance = balance - withdrawl;
         }
 
-        //public override void NewBalance()
-        //{
-        //    //base.AccountBalance();
-        //    //Console.WriteLine
-        //}
+        public override void NewBalance()
+        {
+            //base.AccountBalance();
+            //Console.WriteLine
+        }
 
 
 

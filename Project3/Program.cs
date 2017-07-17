@@ -28,26 +28,84 @@ namespace Project3
                 {
                     Console.WriteLine("Would you like to view your checking, or savings, account?");
                     userFollowUp = Console.ReadLine();
-                    if (userFollowUp = "checking") ;
+                    if (userFollowUp == "checking") ;
                     {
-                        Console.WriteLine("Your checking account balance is: " + CheckingAccount);
+                        Console.WriteLine("Your checking account balance is: " + accountBalance);
                     }
-                    if (userFollowUp = "savings") ;
+                    if (userFollowUp == "savings");
                     {
-                        Console.WriteLine("Your savings account balance is: " + SavingsAccount);
+                        Console.WriteLine("Your savings account balance is: " + accountBalance);
                     }
-                }while (userFollowUp )
+                }
+                while (userFollowUp != "1" || userFollowUp != "2") ;
+            }
+            
+            if (userOption == "3")
+            {
+                do
+                {
+                    Console.WriteLine("Which account would you like to make your deposit?");
+                    userFollowUp = Console.ReadLine();
+                    if (userFollowUp == "checking") ;
+                    {
+                        Console.WriteLine("How much would you like to deposit?")
+                           deposit = float.Parse(Console.ReadLine());
+                        checkingAccountBalance = accountBalance + deposit;
+                        Console.WriteLine("Your new balance is: " + checkingAccountBalance);
+                        Console.WriteLine("Please press enter when done.");
+                    }
+                    if (userFollowUp == "savings") ;
+                    {
+                        Console.WriteLine("How much would you like to deposit?")
+                           deposit = float.Parse(Console.ReadLine());
+                        savingsAccountBalance = accountBalance + deposit;
+                        Console.WriteLine("Your new balance is: " + savingsAccountBalance);
+                        Console.WriteLine("Please press enter when done.");
+                    }
 
                 }
+                while (userFollowUp != "1" || userFollowUp != "2");
+
+                if (userOption == "4") ;
+                {
+                    do
+                    {
+                        Console.WriteLine("Which account would you like to withdraw from?");
+                        userFollowUp = Console.ReadLine();
+                        if (userFollowUp == "checking") ;
+                        {
+                            Console.WriteLine("How much would you like to withdraw?");
+                               withdrawl = float.Parse(Console.ReadLine());
+                            checkingAccountBalance = accountBalance - withdrawl;
+                            Console.WriteLine("Your new balance is: " + checkingAccountBalance);
+                            Console.WriteLine("Please press enter when done.");
+                        }
+                        if (userFollowUp == "savings") ;
+                        {
+                            Console.WriteLine("How much would you like to withdraw?")
+                               withdrawl = float.Parse(Console.ReadLine());
+                            savingsAccountBalance = accountBalance - deposit;
+                            Console.WriteLine("Your new balance is: " + savingsAccountBalance);
+                            Console.WriteLine("Please press enter when done.");
+                        }
+
+                    }
+                    while (userFollowUp != "1" || userFollowUp != "2");
+
+                    if (userOption == "5") ;
+                    {
+                        Console.WriteLine("Thank you for your patronage of BankOfOne");
+                    }
+                }
+
+            }
             }
 
 
 
 
 
-           // Client clientOne = new Client("John Smith", "123 Main St", 2165551234);
-     
-            // Console.WriteLine(clientOne);
+           
         }
     }
 }

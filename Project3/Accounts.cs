@@ -15,9 +15,11 @@ namespace Project3
         //Constructor used to get balances for the checking and savings accounts
         public virtual void AccountBalance()
         {
+            //Default constructor
         }
 
 
+        //Initial attempts at populating the accounts class
         //protected int accountNumber;
         //protected int accountBalance;
         //protected int accountType;

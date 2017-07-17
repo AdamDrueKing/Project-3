@@ -8,14 +8,16 @@ namespace Project3
 {
     class Client
     {
-        //fields
-        private string clientName = "John Smith";
-        private string clientAddress = "123 Main Street";
-        private string clientPhone = "216-555-1234";
-        private float checkingAccountNumber = 00001;
-        private float savingsAccountNumber = 00002;
+        //fields 
+        //client information used to populate user field.
+        public string clientName = "John Smith";
+        public string clientAddress = "123 Main Street";
+        public string clientPhone = "216-555-1234";
+        public float checkingAccountNumber = 00001;
+        public float savingsAccountNumber = 00002;
 
         //properties
+        //used to populate the input
         public string ClientName
         {
             get { return this.clientName; }
@@ -60,6 +62,7 @@ namespace Project3
         }
         
         //Methods
+        //the "verbs".
         public void ClientInformation()
         {
             Console.WriteLine("Client name: " + clientName);
