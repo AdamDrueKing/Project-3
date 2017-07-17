@@ -14,6 +14,7 @@ namespace Project3
             Console.WriteLine("Please select one of the following options:");
             Console.WriteLine("1.View Client Information" + "\n" + "2.View Account Balance" + "\n" + "3.Deposit Funds" + "\n" + "4.Withdraw Funds" + "\n" + "5.Exit");
             string userOption;
+            string userFollowUp;
             userOption = Console.ReadLine();
             do
             {
@@ -26,7 +27,17 @@ namespace Project3
                 if (userOption == "2") ;
                 {
                     Console.WriteLine("Would you like to view your checking, or savings, account?");
-                     
+                    userFollowUp = Console.ReadLine();
+                    if (userFollowUp = "checking") ;
+                    {
+                        Console.WriteLine("Your checking account balance is: " + CheckingAccount);
+                    }
+                    if (userFollowUp = "savings") ;
+                    {
+                        Console.WriteLine("Your savings account balance is: " + SavingsAccount);
+                    }
+                }while (userFollowUp )
+
                 }
             }
 
