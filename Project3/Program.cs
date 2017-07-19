@@ -19,13 +19,20 @@ namespace Project3
             string userFollowUp;
             //initating userOption from user response.
             userOption = Console.ReadLine();
+
+            //instantiating client and accounts
+            Client johnSmith = new Client();
+            CheckingAccount smithChecking = new CheckingAccount();
+            SavingsAccount smithSavings = new SavingsAccount();
+
+
             //Do-While loop to start program based on user responses
             do
             {
                 //user entering option "1" to print user information. ClientInformation from Client class not printing as I'd hoped.
                 if (userOption == "1") ;
                 {
-                    Console.WriteLine(ClientInformation));
+                    Console.WriteLine(johnSmith);
                     Console.WriteLine("Please press the enter key when done.");
                 }
 
@@ -37,95 +44,87 @@ namespace Project3
                     //if user selects checking account to view
                     if (userFollowUp == "checking") ;
                     {
-                        Console.WriteLine("Your checking account balance is: " + accountBalance);
+                        Console.WriteLine("Your checking account balance is: " + smithChecking);
                     }
                     //user selects savings account to view
-                    if (userFollowUp == "savings");
+                    if (userFollowUp == "savings") ;
                     {
-                        Console.WriteLine("Your savings account balance is: " + accountBalance);
+                        Console.WriteLine("Your savings account balance is: " + smithSavings);
                     }
                 }
                 //do the above as long as the second prompt doesn't equal 1, or 2.
                 while (userFollowUp != "1" || userFollowUp != "2") ;
-            }
-            
-            //if the user wants to make a deposit
-            if (userOption == "3")
-            {
-                do
-                    //do the below
-                {
-                    Console.WriteLine("Which account would you like to make your deposit?");
-                    userFollowUp = Console.ReadLine();
-                    //user wants to deposit into checking account
-                    if (userFollowUp == "checking") ;
-                    {
-                        Console.WriteLine("How much would you like to deposit?")
-                           deposit = float.Parse(Console.ReadLine());
-                        checkingAccountBalance = accountBalance + deposit;
-                        Console.WriteLine("Your new balance is: " + checkingAccountBalance);
-                        Console.WriteLine("Please press enter when done.");
-                    }
-                    //user wants to deposit into the savings account
-                    if (userFollowUp == "savings") ;
-                    {
-                        Console.WriteLine("How much would you like to deposit?")
-                           deposit = float.Parse(Console.ReadLine());
-                        savingsAccountBalance = accountBalance + deposit;
-                        Console.WriteLine("Your new balance is: " + savingsAccountBalance);
-                        Console.WriteLine("Please press enter when done.");
-                    }
 
-                }
-                //do the above while the user prompt response is not 1, or 2.
-                while (userFollowUp != "1" || userFollowUp != "2");
 
-                //same as prompt response 3, but for withdrawl, not deposit
-                if (userOption == "4") ;
+                //if the user wants to make a deposit
+                if (userOption == "3")
                 {
                     do
-                        //do the below
+                    //do the below
                     {
-                        Console.WriteLine("Which account would you like to withdraw from?");
+                        Console.WriteLine("Which account would you like to make your deposit?");
                         userFollowUp = Console.ReadLine();
-                        //user wants to withdraw from checking
+                        //user wants to deposit into checking account
                         if (userFollowUp == "checking") ;
                         {
-                            Console.WriteLine("How much would you like to withdraw?");
-                               withdrawl = float.Parse(Console.ReadLine());
-                            checkingAccountBalance = accountBalance - withdrawl;
-                            Console.WriteLine("Your new balance is: " + checkingAccountBalance);
+                            Console.WriteLine("How much would you like to deposit?");
+                               deposit = float.Parse(Console.ReadLine());
+                            smithChecking.AccountBalance = smithChecking.Deposit(deposit);
+                            Console.WriteLine("Your new balance is: " + smithChecking.AccountBalance);
                             Console.WriteLine("Please press enter when done.");
                         }
-                        //user wants to withdraw from savings
+                        //user wants to deposit into the savings account
                         if (userFollowUp == "savings") ;
                         {
-                            Console.WriteLine("How much would you like to withdraw?")
-                               withdrawl = float.Parse(Console.ReadLine());
-                            savingsAccountBalance = accountBalance - deposit;
-                            Console.WriteLine("Your new balance is: " + savingsAccountBalance);
+                            Console.WriteLine("How much would you like to deposit?")
+                               deposit = float.Parse(Console.ReadLine());
+                            smithSavings.AccountBalance = smithSavings.Deposit(deposit);
+                            Console.WriteLine("Your new balance is: " + smithSavings.AccountBalance);
                             Console.WriteLine("Please press enter when done.");
                         }
 
                     }
-                    //while user prompt response isn't 1 or 2.
+                    //do the above while the user prompt response is not 1, or 2.
                     while (userFollowUp != "1" || userFollowUp != "2");
 
-                    //user wants to exit program
-                    if (userOption == "5") ;
+                    //same as prompt response 3, but for withdrawl, not deposit
+                    if (userOption == "4") ;
                     {
-                        Console.WriteLine("Thank you for your patronage of BankOfOne");
+                        do
+                        //do the below
+                        {
+                            Console.WriteLine("Which account would you like to withdraw from?");
+                            userFollowUp = Console.ReadLine();
+                            //user wants to withdraw from checking
+                            if (userFollowUp == "checking") ;
+                            {
+                                Console.WriteLine("How much would you like to withdraw?");
+                                withdrawl = float.Parse(Console.ReadLine());
+                                smithChecking.AccountBalance = smithChecking.Withdrawl(withdrawl);
+                                Console.WriteLine("Your new balance is: " + smithChecking.AccountBalance);
+                                Console.WriteLine("Please press enter when done.");
+                            }
+                            //user wants to withdraw from savings
+                            if (userFollowUp == "savings") ;
+                            {
+                                Console.WriteLine("How much would you like to withdraw?");
+                                   withdrawl = float.Parse(Console.ReadLine());
+                                smithSavings.AccountBalance = smithSavings.Withdrawl(withdrawl);
+                                Console.WriteLine("Your new balance is: " + smithSavings.AccountBalance);
+                                Console.WriteLine("Please press enter when done.");
+                            }
+
+                        }
+                        //while user prompt response isn't 1 or 2.
+                        while (userFollowUp != "1" || userFollowUp != "2");
+
+                        //user wants to exit program
+                        if (userOption == "5") ;
+                        {
+                            Console.WriteLine("Thank you for your patronage of BankOfOne");
+                        }
                     }
+
                 }
-
             }
-            }
-
-
-
-
-
-           
-        }
-    }
-}
+            
