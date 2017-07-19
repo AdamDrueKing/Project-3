@@ -68,7 +68,7 @@ namespace Project3
                         if (userFollowUp == "checking") ;
                         {
                             Console.WriteLine("How much would you like to deposit?");
-                               deposit = float.Parse(Console.ReadLine());
+                            deposit = float.Parse(Console.ReadLine());
                             smithChecking.AccountBalance = smithChecking.Deposit(deposit);
                             Console.WriteLine("Your new balance is: " + smithChecking.AccountBalance);
                             Console.WriteLine("Please press enter when done.");
@@ -108,7 +108,7 @@ namespace Project3
                             if (userFollowUp == "savings") ;
                             {
                                 Console.WriteLine("How much would you like to withdraw?");
-                                   withdrawl = float.Parse(Console.ReadLine());
+                                withdrawl = float.Parse(Console.ReadLine());
                                 smithSavings.AccountBalance = smithSavings.Withdrawl(withdrawl);
                                 Console.WriteLine("Your new balance is: " + smithSavings.AccountBalance);
                                 Console.WriteLine("Please press enter when done.");
@@ -125,6 +125,8 @@ namespace Project3
                         }
                     }
 
-                }
-            }
+                
             
+}
+}
+}
